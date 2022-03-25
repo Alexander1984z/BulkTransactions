@@ -10,7 +10,9 @@
     "deploy": "npx oz deploy --skip-compile",
     "test": "npm run compile && mocha --exit --timeout 0 test/*-test.js",
     "lint": "eslint --ext .js,.ts ./; npx solhint **/*.sol",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -40,6 +42,8 @@
   },
   "dependencies": {
     "@truffle/hdwallet-provider": "^1.0.42",
-    "dotenv": "^8.2.0"
-  }
+    "dotenv": "^8.2.0",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
